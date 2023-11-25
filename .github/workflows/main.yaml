@@ -23,7 +23,7 @@ jobs:
         run: |
           set -x
           VERSION=$(
-            docker run --rm -i ${{ env.IMAGE }} -v \
+            docker run --rm -i ${{ env.IMAGE }} -version \
               | cut -d ' ' -f 3
           )
           [ -n "$VERSION" ] || exit
